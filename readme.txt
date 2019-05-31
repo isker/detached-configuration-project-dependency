@@ -1,0 +1,1 @@
+run `./gradlew resolveDetached --stacktrace`
