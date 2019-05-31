@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'detached-configuration-project-dependency'
+
+include 'subproject'

@@ -21,6 +21,16 @@ task resolveDetached {
     }
 }
 
+task resolveDetachedSubproject {
+    def detachedConfig = project.configurations.detachedConfiguration()
+    // Depend on the subproject
+    detachedConfig.dependencies.add(project.dependencies.create(project('subproject')))
+    doFirst {
+        // will not throw
+        detachedConfig.resolvedConfiguration.firstLevelModuleDependencies.each { println(it) }
+    }
+}
+
 configurations {
     attached
 }
